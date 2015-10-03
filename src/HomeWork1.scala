@@ -1,4 +1,4 @@
-object HoweWork1 {
+object HomeWork1 {
   // 1
   def f(n: Int): BigInt = if (n == 1) 4 else f(n - 1) * f(n - 1)
 
