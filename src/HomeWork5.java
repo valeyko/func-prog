@@ -1,9 +1,8 @@
 public class HomeWork5 {
-    interface IntegrableFunction {
-        double value(double x);
-    }
-
     private final static int N = 100;
+
+    private HomeWork5() {
+    }
 
     public static double integral(IntegrableFunction f, double a, double b) {
         double h = (a + b) / N;
@@ -18,5 +17,9 @@ public class HomeWork5 {
 
     public static void main(String[] args) {
         System.out.println(integral(x -> x * x, 0, 1));
+    }
+
+    interface IntegrableFunction {
+        double value(double x);
     }
 }
