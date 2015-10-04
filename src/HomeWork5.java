@@ -5,7 +5,7 @@ public class HomeWork5 {
     }
 
     public static double integral(IntegrableFunction f, double a, double b) {
-        double h = (a + b) / N;
+        double h = (b - a) / N;
         double sum = 0;
         for (int i = 1; i < N; i += 2) {
             double x1 = a + i * h;
