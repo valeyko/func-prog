@@ -8,3 +8,6 @@ repeatFunc f n | n == 1 = f | otherwise = f . repeatFunc f (n - 1)
 
 countOdd xs = foldr (\x acc -> acc + mod x 2) 0 xs
 countOdd1 xs = length $ filter (\x -> mod x 2 == 1) xs
+
+myfoldl f start [] = start
+myfoldl f start (x : xs) = myfoldl f (f start x) xs
