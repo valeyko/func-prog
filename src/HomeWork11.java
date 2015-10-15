@@ -6,7 +6,7 @@ public class HomeWork11 {
     public static Predicate<Integer> checkDigitCurried(Integer digit) {
         String c = digit.toString();
         if (c.length() != 1) {
-            throw new Error(digit + " is not a digit!");
+            throw new RuntimeException(digit + " is not a digit!");
         }
         return x -> x.toString().contains(c);
     }

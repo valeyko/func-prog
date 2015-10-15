@@ -24,6 +24,6 @@ sumSqr = foldTree (\v l r -> v ^ 2 + l + r) 0
 data Scheme a = P (Scheme a) (Scheme a) | S (Scheme a) (Scheme a) | R a
 
 -- 5
-ones = [ones' i | i <- [1..]]
-ones' n | n == 1 = 1
-        | otherwise = ones' (n - 1) * 10 + 1
+ones = ones' 1
+ones' x | x == 0 = []
+        | otherwise = x : ones' (10 * x + 1)
