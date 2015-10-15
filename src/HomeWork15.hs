@@ -26,4 +26,4 @@ data Scheme a = P (Scheme a) (Scheme a) | S (Scheme a) (Scheme a) | R a
 -- 5
 ones = [ones' i | i <- [1..]]
 ones' n | n == 1 = 1
-        | otherwise = (10 ^ (n - 1)) + ones' (n - 1)
+        | otherwise = ones' (n - 1) * 10 + 1
