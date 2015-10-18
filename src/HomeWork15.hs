@@ -22,6 +22,12 @@ sumSqr = foldTree (\v l r -> v ^ 2 + l + r) 0
 
 -- 4
 data Scheme a = P (Scheme a) (Scheme a) | S (Scheme a) (Scheme a) | R a
+foldScheme r s p (R a) = r a
+foldScheme r s p (S s1 s2) = s (foldScheme r s p s1) (foldScheme r s p s2)
+foldScheme r s p (P s1 s2) = p (foldScheme r s p s1) (foldScheme r s p s2)
+
+totalResistance = foldScheme id (+) (\r1 r2 -> 1 / (1 / r1 + 1 / r2))
+numberOfResistors = foldScheme (const 1) (+) (+)
 
 -- 5
 ones = ones' 1
