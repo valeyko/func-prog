@@ -30,6 +30,10 @@ instance Num Ration where
 instance Show Ration where
     show (Rat a b) = show a ++ "/" ++ show b
 
+-- 3
+checkNoSquares :: [Int] -> Bool
+checkNoSquares xs = let xs2 = map (^2) xs in not $ any (\x -> if x == 0 || x == 1 then False else elem x xs2) xs
+
 -- 4
 triangle :: Int -> [Int]
 triangle n = do
